@@ -2,8 +2,9 @@ body{
     background-color: #f2f2f2;
 }
 
-th{
+h2,h4,th{
     background-color: #0b162a;
+    color: #f2f2f2bd;
 }
 
 tr:nth-child(even) {background-color: #cad0db;}
