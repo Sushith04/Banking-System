@@ -1,0 +1,40 @@
+body{
+    background-color: #f2f2f2;
+}
+
+th{
+    background-color: #0b162a;
+}
+
+tr:nth-child(even) {background-color: #cad0db;}
+tr:nth-child(odd) {background-color: #a6b4cf;}
+
+td{
+    color: #000000;
+}
+.my-info{
+    padding: 2rem 5rem;
+    background: #0b162a;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 6rem; 
+}
+
+.btn-info{
+    background:#bda042!important;
+    color: #fff!important;
+    transition: all 0.3s;
+    border: none;
+}
+
+.btn-info:hover{
+    background: #ccb05b!important;
+}
+
+.input-group{
+    display: block;
+    padding-bottom: 3rem;
+}
+
+#enterName,#enterAmount{
+    width:60%;
+}

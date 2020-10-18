@@ -1,0 +1,235 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Basic Banking System</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
+	<link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/flexslider.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/customers.css">
+	</head>
+    <body id="top">
+		
+    <div class="colorlib-loader"></div>
+        
+    <div id="page">
+    <nav class="colorlib-nav" role="navigation">
+        <div class="top-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2">
+                        <div id="colorlib-logo"><a href="index.html">Star<span>Pay</span></a></div>
+                    </div>
+                    <div class="col-md-10 text-right menu-1">
+                        <ul>
+                            <li class="active"><a href="index.html">Home</a></li>
+                            <li class="btn-cta">
+                                <a data-toggle="modal" data-target="#sendMoney"><span>Make Payment</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar ends here  -->
+
+    <div class="my-info text-center">
+        <h2>Account Holder Name: Sushith Kumar Reddy D B</h2>
+        <h4>Savings: $<span id="myAccountBalance">5000</span></h4>
+        <a class="btn btn-info" href="" data-toggle="modal" data-target="#transactionHistory">See All Transaction</a>
+    </div>
+
+    <!-- Modal Make Payment -->
+    <div class="modal fade" id="sendMoney" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Enter Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="">
+                    <div class="modal-body">
+                        <div class="input-group">
+                            <input type="text" id="enterName" class="form-control" placeholder="E-mail"
+                                aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <span class="input-group-text" id="basic-addon2">@email.com</span>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="enterAmount" class="form-control" placeholder="Amount (in $)"
+                                aria-label="Amount (to the nearest dollar)">
+                            <span class="input-group-text">.00</span>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" onclick="sendMoney()" class="btn btn-info" data-dismiss="modal">Make Payment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal transaction History-->
+    <div class="modal fade" id="transactionHistory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Transaction History</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ol id="transaction-history-body">
+
+                    </ol>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- table  -->
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr class="table-danger">
+                        <th scope="col">S. No.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Current Balance(in $)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-light">
+                        <td scope="row">1</td>
+                        <td>Robert Downey Jr.</td>
+                        <td>robert@email.com</td>
+                        <td>
+                            <p id="robertBankBalance">3000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-info">
+                        <td scope="row">2</td>
+                        <td>Chris Hemsworth</td>
+                        <td>chris@email.com</td>
+                        <td>
+                            <p id="chrisBankBalance">110883</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">3</td>
+                        <td>Scarlett Johansson</td>
+                        <td>scarlett@email.com</td>
+                        <td>
+                            <p id="scarlettBankBalance">221184</p>
+                        </td>
+                    </tr>
+                    <tr class="table-info">
+                        <td scope="row">4</td>
+                        <td>Mark Ruffalo</td>
+                        <td>mark@email.com</td>
+                        <td>
+                            <p id="markBankBalance">221167</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">5</td>
+                        <td>Elizabeth Olsen</td>
+                        <td>elizabeth@email.com</td>
+                        <td>
+                            <p id="elizabethBankBalance">16289</p>
+                        </td>
+                    </tr>
+                    <tr class="table-info">
+                        <td scope="row">6</td>
+                        <td>Tom Holland</td>
+                        <td>tom@email.com</td>
+                        <td>
+                            <p id="tomBankBalance">10696</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td>7</td>
+                        <td>Jeremy Renner</td>
+                        <td>jeremy@email.com</td>
+                        <td>
+                            <p id="jeremyBankBalance">70171</p>
+                        </td>
+                    </tr>
+                    <tr class="table-info">
+                        <td scope="row">8</td>
+                        <td>Paul Bettany</td>
+                        <td>paul@email.com</td>
+                        <td>
+                            <p id="paulBankBalance">27571</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">9</td>
+                        <td>Don Cheadle</td>
+                        <td>don@email.com</td>
+                        <td>
+                            <p id="donBankBalance">291164</p>
+                        </td>
+                    </tr>
+                    <tr class="table-info">
+                        <td scope="row">10</td>
+                        <td>Gwen Palthrow</td>
+                        <td>gwen@email.com</td>
+                        <td>
+                            <p id="gwenBankBalance">27972</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer id="colorlib-footer" role="contentinfo">
+		<div class="container">
+			<div class="row copyright">
+				<div class="col-md-12 text-center">
+					<p>
+					<small class="block">&copy; 2020 StarPay. All Rights Reserved. Created by Sushith.</a></small>
+					</p>
+					<p>
+						<ul class="colorlib-social-icons">
+							<li><a href="https://github.com/Sushith04" target="_blank"><i class="icon-github"></i></a></li>
+							<li><a href="mailto:sushithreddy21@gmail.com" target="_blank"><i class="icon-mail"></i></a></li>
+							<li><a href="https://www.linkedin.com/in/sushith-kumar-reddy-d-b-9051b9146/" target="_blank"><i class="icon-linkedin"></i></a></li>
+						</ul>
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#top"><i class="icon-arrow-up"></i></a>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script src="js/script.js"></script>
+	<script src="js/main.js"></script>
+	</body>
+</html>
